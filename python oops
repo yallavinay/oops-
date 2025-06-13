@@ -1,0 +1,128 @@
+1. Class
+A class is a blueprint for creating objects.
+
+It defines attributes (data) and methods (functions).
+
+✅ Example:
+python
+Copy
+Edit
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def display_info(self):
+        print(f"{self.brand} {self.model}")
+2. Object
+An object is an instance of a class.
+
+It represents a specific implementation of the class.
+
+✅ Example:
+python
+Copy
+Edit
+my_car = Car("Toyota", "Corolla")
+my_car.display_info()  # Output: Toyota Corolla
+3. __init__ Method (Constructor)
+A special method called automatically when a new object is created.
+
+Used to initialize attributes.
+
+✅ Example:
+python
+Copy
+Edit
+def __init__(self, name):
+    self.name = name
+4. self Keyword
+Refers to the current instance of the class.
+
+Used to access variables and methods inside the class.
+
+5. Encapsulation
+Bundling data (attributes) and methods inside a class.
+
+Also hides internal state from outside access using private attributes.
+
+✅ Example:
+python
+Copy
+Edit
+class Person:
+    def __init__(self, name):
+        self.__name = name  # private attribute
+
+    def get_name(self):
+        return self.__name
+6. Inheritance
+A class can inherit methods and properties from another class (called the parent or base class).
+
+✅ Example:
+python
+Copy
+Edit
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+
+my_dog = Dog()
+my_dog.speak()  # Inherited
+my_dog.bark()
+7. Polymorphism
+The ability to use a common method name with different implementations.
+
+✅ Example:
+python
+Copy
+Edit
+class Bird:
+    def sound(self):
+        print("Tweet")
+
+class Cat:
+    def sound(self):
+        print("Meow")
+
+for animal in (Bird(), Cat()):
+    animal.sound()
+8. Abstraction
+Hiding internal details and showing only the necessary features.
+
+Python uses abstract base classes (ABCs) with the abc module.
+
+✅ Example:
+python
+Copy
+Edit
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Square(Shape):
+    def __init__(self, side):
+        self.side = side
+
+    def area(self):
+        return self.side * self.side
+
+sq = Square(4)
+print(sq.area())  # Output: 16
+🔁 Summary Table
+Concept	Description	Keyword/Note
+Class	Blueprint for objects	class
+Object	Instance of a class	object = Class()
+Constructor	Initializes object state	__init__
+Encapsulation	Restrict direct access to attributes	self.__var
+Inheritance	Derive class from another	class B(A):
+Polymorphism	Same method, different behavior	Overridden methods
+Abstraction	Hiding implementation details	@abstractmethod
+
